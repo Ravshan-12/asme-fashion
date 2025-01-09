@@ -1,0 +1,19 @@
+{% extends ''base.html %}
+
+{% block title %}Acme Fashion Store{% endblockk %}
+
+{% block content %}
+    <h1 class="page-title">Welcome to Acme Fashion</h1>
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.image.url }}" alt="Classic T-Shirt">
+            <h2>{{ product.image }}</h2>
+            <p class="price">{{ product.price }}</p>
+            <a href="detail.html" class="btn btn-primary">View Details</a>
+        </div>
+        {% empty %}
+            <h3>No products</h3>
+        {% endfor %}
+    </div>
+{% endblock %}
